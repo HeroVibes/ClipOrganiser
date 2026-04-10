@@ -1,16 +1,16 @@
 # ClipOrganiser
 Automatically organise your recordings and "replay captures" from OBS, Meld and other apps by creating a folder - with a name of your choosing - and moving the latest capture to it.
 
-To use this, you'll need to modify two elements in the script, and a short third step:
+To use this, you'll need to modify two elements in the script, and a short third step. When downloading the .bat file, make sure you download the correct one for you - if you're ONLY using Replay Buffer OR Vertical (capturing a single clip at a time), download SingleClipOrganiser.bat. If you use Replay Buffer AND Vertical at the same time to capture TWO clips at once, for instance, download and modify DoubleClipOrganiser.bat - this one moves TWO of the latest video files at once, rather than one.
 
 # 1. The Directory
-The directory is defined on (default is on Line 8 - "sourceFolder=**%USERPROFILE%\Documents\Recordings**". Set this to the folder OBS saves all recordings and clips to - simply replace **"%USERPROFILE%\Documents\Recordings"** for your folder path. The default folder for OBS, for instance, would be **"C:\Users\<username>\Videos"**.
+The directory is defined on (default is on Line 8 - "sourceFolder=**%USERPROFILE%\Documents\Recordings**". Set this to the folder OBS saves all recordings and clips to - simply replace **"%USERPROFILE%\Documents\Recordings"** for your folder path. The default folder for OBS, for instance, would be **"C:\Users\<username>\Videos"**. Make sure that if you're using the DoubleClipOrganiser.bat, both the Replay Buffer and Vertical clip locations are saving videos to the same folder.
 
 # 2. The Folder Name
 To customise the name of the folder that will be created - this is where the clips will be moved to - you'll want to change the name on Line 28 - **"call :MoveLatest "%sourceFolder%" "%sourceFolder%\Gameplay""**. Simply change **"Gameplay"** to the name of the folder; eg. "Funny Moments", "Boss Fights", "Deaths".
 
 # 3. Rename The Script
-To help keep things organised - particularly if you plan on having multiple scripts available, it's recommended to rename the script to something that helps identify it, like BossFights.bat, then put it in a safe folder.
+To help keep things organised - particularly if you plan on having multiple scripts available, it's recommended to rename the script to something that helps identify it, like BossFights.bat, then put it in a safe folder. Then, you can create multiple versions of the .bat script, for multiple events/categories.
 
 Once the setup is complete, the script works best when paired with something like the Elgato Stream Deck. Simply drag and drop the script onto a "button", then test it by recording a short clip and tapping the button - a new folder with the name of your choosing should be created, and the recording should be moved inside.
 
